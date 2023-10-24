@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace ConsoleApp67
+namespace Zadanie
 {
     internal class Fibonacci
     {
         //wrzucić parametry min,max
-        public static void Sequence(int max)
+        public static void Sequence(int min, int max)
         {
             var timer = new Stopwatch();
             int counter = 0;
@@ -19,9 +19,9 @@ namespace ConsoleApp67
             int z;
             for (int i = 2; i <= max; i++)
             {
-                if (i == 30)
+                if (i == min)
                     timer.Start();
-                if (i>= 30 && i<47)
+                if (i>= min && i<max)
                 {
                     z = x + y;
                     counter++;
@@ -31,7 +31,7 @@ namespace ConsoleApp67
                     counter++;
                 }
 
-                else if (i == 47)
+                else if (i == max)
                 {
                     z = x + y;
                     counter++;
@@ -44,8 +44,9 @@ namespace ConsoleApp67
                     y = z;
                 }
             }
-            Console.WriteLine($"Number of operations: {counter}");
-            Console.WriteLine($"Time: {timer.Elapsed}");
+            Console.WriteLine($"Liczba operacji: {counter}");
+            Console.WriteLine($"Czas działania: {timer.Elapsed}");
         }
+        
     }
 }
